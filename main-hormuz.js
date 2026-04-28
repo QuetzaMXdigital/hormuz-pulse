@@ -1,3 +1,4 @@
+import { fetchGlobalNews } from './services/taco-motor.js'; // Corregido: solo un punto ./
 import { renderWatchlist } from './components/radar.js';
 import { updateStatusPanel } from './components/status.js';
 
@@ -32,9 +33,11 @@ window.onload = () => {
     updateStatusPanel();
     initTradingView();
     renderWatchlist();
-    // Aún no importamos Taco ni Heatmaps porque los conectaremos a Gemini después
     
     // Ciclos
     setInterval(updateStatusPanel, 1000);
     setInterval(renderWatchlist, 10000);
 };
+
+// Prueba de fuego del Taco Motor
+fetchGlobalNews();
